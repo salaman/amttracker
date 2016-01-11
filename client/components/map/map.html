@@ -1,0 +1,15 @@
+<map :center.sync="center"
+     :zoom.sync="zoom">
+	<marker v-for="m in markers"
+	        :position.sync="m.position"
+	        :title.sync="m.title"
+	        :icon.sync="m.icon"
+	        v-if="m.enabled"></marker>
+	<polyline v-for="p in polylines"
+	          :path.sync="p.path"
+	          :geodesic="p.geodesic"
+	          :stroke-color="p.color"
+	          :stroke-opacity="p.opacity"
+	          :stroke-weight="p.weight"
+	          v-if="p.enabled"></polyline>
+</map>
